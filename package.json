@@ -1,0 +1,32 @@
+{
+  "name": "pinstack-v2",
+  "version": "1.0.0",
+  "description": "google maps + react app",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://erikadmoller@github.com/burt-macklin-fbi/pinstack-v2.git"
+  },
+  "author": "Erika C.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burt-macklin-fbi/pinstack-v2/issues"
+  },
+  "homepage": "https://github.com/burt-macklin-fbi/pinstack-v2#readme",
+  "dependencies": {
+    "google-maps-react": "^1.1.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.17"
+  },
+  "devDependencies": {
+    "google-maps": "^3.2.1"
+  }
+}
