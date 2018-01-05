@@ -29,11 +29,11 @@ export default class EarthquakesMap extends Component {
       var heatmapData = [];
 
       this.props.quakes.map( (quake) => {
-        let mag
+        // let mag
         // if (quake.properties.mag < 5) { mag = 3 } else if (quake.properties.mag > 6) {mag = 10} else {mag = 5}
         // heatmapData.push({
-        //   location: new google.maps.LatLng(quake.geometry.coordinates[1], quake.geometry.coordinates[0]),
-        //   weight: mag
+          // loca0tion: new google.maps.LatLng(quake.geometry.coordinates[1], quake.geometry.coordinates[0])
+          // weight: mag
         // })
 
         const marker = new google.maps.Marker({
@@ -59,7 +59,7 @@ export default class EarthquakesMap extends Component {
       //   data: heatmapData,
       //   radius: 40
       // });
-      // heatmap.setMap(this.map);
+      // heatmapData.setMap(this.map);
     }
   }
 
