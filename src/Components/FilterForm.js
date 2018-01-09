@@ -4,7 +4,7 @@
 // import React, { Component } from 'react';
 
 
-// class EarthquakesForm extends Component {
+// class FilterForm extends Component {
 
 //   handleSubmit = (event) => {
 //     event.preventDefault()
@@ -39,4 +39,4 @@
 //   }
 // }
 
-// export default EarthquakesForm
+// export default FilterForm

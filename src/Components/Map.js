@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
 
-export default class EarthquakesMap extends Component {
+export default class Map extends Component {
   componentDidUpdate(prevProps, prevState) {
     // if (prevProps.google !== this.props.google || prevProps.quakes !== this.props.quakes) {
     if (prevProps.google !== this.props.google) {

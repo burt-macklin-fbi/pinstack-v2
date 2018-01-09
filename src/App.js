@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EarthquakesContainer from './Components/EarthquakesContainer'
+import Container from './Components/Container'
 import {BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <EarthquakesContainer />
+        <Container />
       </div>
       </Router>
     );
