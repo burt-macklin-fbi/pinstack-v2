@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
-// import FilterForm from './FilterForm'
+import CreateMarker from './CreateMarker'
 import Map from './Map'
+import Description from './Description'
 import { fetchMarkers } from '../Services/markers'
 // import { searchQuakes } from '../Services/earthquakes'
 import { GoogleApiWrapper } from 'google-maps-react'
+import markerIcon from '../assets/marker.svg'
+
 
 class Container extends Component {
 
@@ -29,14 +32,22 @@ class Container extends Component {
   render() {
     return (
       <div className="Container">
-        <h1>🌐 Earthquake Mapper</h1>
+        <header className="header">
+          <ul className="navgroup">
+            <li className="navgroup__item">Explore</li>
+            <li className="navgroup__item">Share</li>
+            <li className="navgroup__item logo">P<img className="marker-icon" src={markerIcon}/>nStack</li>
+            <li className="navgroup__item">Create Map</li>
+            <li className="navgroup__item">Sign In</li>
+          </ul>
+        </header>
         <div className="wrapper">
-          {/* <FilterForm onFilter={this.onFilter}/> */}
+          {/* <CreateMarker onFilter={this.onFilter}/> */}
+          <CreateMarker/>
           {/* <Route path="/" render={(props) => <Map google={this.props.google} quakes={this.state.quakes} {...props}/>}/> */}
           <Route path="/" render={(props) => <Map google={this.props.google} quakes={this.state.quakes} {...props}/>}/>
+          <Description/>
         </div>
-        <br/>
-        <p><strong>This app was created with ❤️ by me, Matthew Thorry.</strong> Checkout the <a href="https://github.com/mthorry/earthquakes-mapper" target="_blank" rel="noopener noreferrer">GitHub repo</a>, my <a href="https://medium.com/front-end-hacking/using-the-google-maps-javascript-api-in-a-react-project-b3ed734375c6" target="_blank" rel="noopener noreferrer">blog post</a> about this, or my <a href="https://www.linkedin.com/in/mthorry/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
       </div>
     );
   }

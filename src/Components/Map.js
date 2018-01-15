@@ -65,7 +65,7 @@ export default class Map extends Component {
 
   render() {
     const style = {
-      width: '85vw',
+      width: '100%',
       height: '75vh'
     }
 

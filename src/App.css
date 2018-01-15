@@ -1,6 +1,49 @@
+.header {
+  line-height: 80px;
+  padding: 0 30px;
+}
+
+.navgroup {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.navgroup__item {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  font-family: 'Cutive', serif;
+}
+.navgroup__item.logo {
+  flex: 2;
+  font-family: 'BioRhyme', serif;
+  font-size: 40px;
+}
+.marker-icon {
+  height: 32px;
+}
+.map-info {
+  display: block;
+  width: 100%;
+  padding: 10px 50px;
+}
+.map-info__label {
+  padding-right: 5px;
+}
+.map-info__label, .map-info__copy {
+  font-family: 'Cutive', serif;
+  display: inline-block;
+  color: #999;
+  line-height: 25px;
+}
+
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
   }
@@ -12,11 +55,6 @@
   
   h1, h3, p, label, input {
     font-family: sans-serif;
-  }
-  
-  .App {
-    padding: 5px;
-    background-image: url('./topography.png');
   }
   
   .myButton {
