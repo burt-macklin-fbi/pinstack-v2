@@ -70,9 +70,15 @@ export default class Map extends Component {
     }
 
     return (
-      <div ref="map" style={style}>
-        loading map...
-      </div>
+      <section className="map-container">
+        <div className="search-box">
+
+          <input type="search" className="search-input"/>
+        </div>
+        <div ref="map" style={style} className="mappy">
+          loading map...
+        </div>
+      </section>
     )
   }
 }
