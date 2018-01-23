@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 import CreateMarker from './CreateMarker'
 import Map from './Map'
 import Description from './Description'
 import { fetchMarkers } from '../Services/markers'
 // import { searchQuakes } from '../Services/earthquakes'
 import { GoogleApiWrapper } from 'google-maps-react'
-import markerIcon from '../assets/marker.svg'
 
 
 class Container extends Component {
@@ -32,21 +31,10 @@ class Container extends Component {
   render() {
     return (
       <div className="Container">
-        <header className="header">
-          <ul className="navgroup">
-            <li className="navgroup__item">Explore</li>
-            <li className="navgroup__item">Share</li>
-            <li className="navgroup__item logo">P<img className="marker-icon" src={markerIcon}/>nStack</li>
-            <li className="navgroup__item">Create Map</li>
-            <li className="navgroup__item">Sign In</li>
-          </ul>
-        </header>
-        <div className="wrapper">
           {/* <CreateMarker onFilter={this.onFilter}/> */}
-          <Route path="/" render={(props) => <CreateMarker google={this.props.google} {...props}/>} />
-          <Route path="/" render={(props) => <Map google={this.props.google} markers={this.state.markers} {...props}/>} />
-          <Description/>
-        </div>
+          {/* <Route path="/" render={(props) => <CreateMarker google={this.props.google} {...props}/>} /> */}
+          {/* <Route path="/" render={(props) => <Map google={this.props.google} markers={this.state.markers} {...props}/>} /> */}
+          {/* <Description/> */}
       </div>
     );
   }
