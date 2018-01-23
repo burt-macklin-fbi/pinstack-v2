@@ -28,7 +28,7 @@ export default class Map extends Component {
       this.map = new maps.Map(node, mapConfig);
       var heatmapData = [];
 
-      this.props.quakes.map( (quake) => {
+      this.props.markers.map( (marker) => {
         // let mag
         // if (quake.properties.mag < 5) { mag = 3 } else if (quake.properties.mag > 6) {mag = 10} else {mag = 5}
         // heatmapData.push({
@@ -36,22 +36,22 @@ export default class Map extends Component {
           // weight: mag
         // })
 
-        const marker = new google.maps.Marker({
-          position: {lat: quake.geometry.coordinates[1], lng: quake.geometry.coordinates[0]},
+        const gaMarker = new google.maps.Marker({
+          position: {lat: marker.geometry.coordinates[1], lng: marker.geometry.coordinates[0]},
           map: this.map,
-          title: quake.properties.title,
+          title: marker.properties.title,
           icon: {
             url: "https://cdn3.iconfinder.com/data/icons/earthquake/500/earthquake-24-32.png"
           }
         });
 
         const infowindow = new google.maps.InfoWindow({
-          content: `<h3>${quake.properties.title}</h3>
-          <h4>${(new Date(quake.properties.time)).toDateString()}
-          at depth of ${quake.geometry.coordinates[2]} km</h4>
-          <a href=${quake.properties.url} target="_blank">More Info</a>`
+          content: `<h3>${marker.properties.title}</h3>
+          <h4>${(new Date(marker.properties.time)).toDateString()}
+          at depth of ${marker.geometry.coordinates[2]} km</h4>
+          <a href=${marker.properties.url} target="_blank">More Info</a>`
         });
-        marker.addListener('click', function() {
+        gaMarker.addListener('click', function() {
           infowindow.open(this.map, marker);
         });
       })

@@ -12,14 +12,14 @@ import markerIcon from '../assets/marker.svg'
 class Container extends Component {
 
   state = {
-    quakes: []
+    markers: []
   }
 
   componentDidMount = () => {
-    fetchMarkers()
-      .then((json) => {
-        this.setState({ quakes: json.features }, )
-      })
+    // fetchMarkers()
+    //   .then((json) => {
+    //     this.setState({ quakes: json.features }, )
+    // })
   }
 
   // onFilter = (event) => {
@@ -43,9 +43,8 @@ class Container extends Component {
         </header>
         <div className="wrapper">
           {/* <CreateMarker onFilter={this.onFilter}/> */}
-          <CreateMarker/>
-          {/* <Route path="/" render={(props) => <Map google={this.props.google} quakes={this.state.quakes} {...props}/>}/> */}
-          <Route path="/" render={(props) => <Map google={this.props.google} quakes={this.state.quakes} {...props}/>}/>
+          <Route path="/" render={(props) => <CreateMarker google={this.props.google} {...props}/>} />
+          <Route path="/" render={(props) => <Map google={this.props.google} markers={this.state.markers} {...props}/>} />
           <Description/>
         </div>
       </div>
