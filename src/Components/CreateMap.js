@@ -3,17 +3,27 @@ import React, { Component } from 'react';
 class CreateMap extends Component {
 	render() {
 		return (
-			<div>
-		        <h2>Create Map</h2>
-		        <p>Cras facilisis urna ornare ex volutpat, et
-		        convallis erat elementum. Ut aliquam, ipsum vitae
-		        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-		        metus nec massa. Maecenas hendrerit laoreet augue
-		        nec molestie. Cum sociis natoque penatibus et magnis
-		        dis parturient montes, nascetur ridiculus mus.</p>
-		 
-		        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
-	      </div>
+		  <div>
+        <h2>Create Map</h2>
+        <form className="create-map--form">
+        	<fieldset>
+        		<legend>Name and describe your map</legend>
+        		<div>
+        			<label>Name<abbr title="required">*</abbr></label>
+        			<input id="map-name" type="text" name="mapname"/>
+        		</div>
+        		<div>
+        			<label>Keywords</label>
+        			<input id="map-keywords" type="text" name="keywords"/>
+        		</div>
+        		<div>
+        			<label>Description<abbr title="required">*</abbr></label>
+        			<textarea id="map-description" type="text" name="description"></textarea>
+        		</div>
+        	</fieldset>
+        	<button type="submit">Next</button>
+        </form>
+	    </div>
 		);
 	}
 }

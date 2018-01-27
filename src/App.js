@@ -47,12 +47,16 @@ class App extends Component {
 		            <li className="navgroup__item"><NavLink to="/create-map">Create Map</NavLink></li>
 		            <li className="navgroup__item"><NavLink to="/my-account">Sign In</NavLink></li>
 		          </ul>
+		          <div className="search-box">
+
+			        <input type="search" className="search-input"/>
+			      </div>
 		        </header>
 		        <div className="wrapper">
 		        	<Route path="/explore" component={Explore} />
 		        	<Route path="/create-map" component={CreateMap} />
 		        	<Route path="/my-account" component={MyAccount} />
-			      {/* <Container /> */}
+			      	<Container />
 			      {/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack 
 			      <Route path="/explore" component={Explore} />
 			      <Route path="/create-map" component={CreateMap} />
