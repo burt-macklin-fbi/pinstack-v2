@@ -10,7 +10,7 @@ import CreateMap from './Components/CreateMap';
 import MyAccount from './Components/MyAccount';
 
 //STYLE
-import './App.css';
+import './css/style.css';
 
 //DATEBASE 
 import base from './base';
