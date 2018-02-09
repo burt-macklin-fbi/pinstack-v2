@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
+import SampleMaps from '../sample-maps.js';
 
 class Explore extends Component {
+	constructor() {
+		super();
+
+		this.loadMap = this.loadMap.bind(this);
+
+		this.state = {
+			maps: {}
+		}
+	}
+
+	loadMap() {
+		this.setState({
+			maps: SampleMaps
+		})
+	}
+
 	render() {
 		return (
 			<section className="explore-container">

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CreateMap extends Component {
 	render() {
 		return (
-		  <div>
+		  <div className="form-container">
         <h2>Create Map</h2>
         <form className="create-map--form">
         	<fieldset>
@@ -21,7 +21,10 @@ class CreateMap extends Component {
         			<textarea id="map-description" type="text" name="description"></textarea>
         		</div>
         	</fieldset>
-        	<button type="submit">Next</button>
+          <div className="btn-group">
+            <label>Next: set your location</label>
+            <button className="btn" type="submit">Next</button>
+          </div>
         </form>
 	    </div>
 		);
