@@ -23,6 +23,10 @@ class Explore extends Component {
 			<section className="explore-container">
 		        <h2>Filters</h2>
 		        <section className="thumb-container">
+		        	{
+		        		Object.keys(this.state.maps).map(key => <);
+		        	}
+
 		        	<figure className="thumb">
 		        		<img src="" alt="" />
 		        		<figcaption></figcaption>
