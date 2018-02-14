@@ -9,6 +9,8 @@ import Explore from './Components/Explore';
 import CreateMap from './Components/CreateMap';
 import MyAccount from './Components/MyAccount';
 
+import SampleMaps from './sample-maps';
+
 //STYLE
 import './css/style.css';
 
@@ -21,10 +23,14 @@ import markerIcon from './assets/marker.svg'
 class App extends Component {
   constructor() {
   	super();
+
+  	this.loadMaps = this.loadMaps.bind(this);
+
   	this.state = {
-  		markers: { }
+  		markers: {}
   	};
   }
+
   componentWillMount() {
   	this.ref = base.syncState('test'
   		, {
@@ -35,6 +41,16 @@ class App extends Component {
   componentWilUnmount() {
   	//base.removeBinding(this.ref);
   }
+  componentDidMount() {
+  	window.addEventListener('load', this.loadMaps);
+  }
+
+  loadMaps() {
+  	this.setState({
+  		markers: SampleMaps
+  	});
+  }
+
   render() {
     return (
  		<HashRouter>
@@ -61,6 +77,13 @@ class App extends Component {
 			      <Route path="/explore" component={Explore} />
 			      <Route path="/create-map" component={CreateMap} />
 			      <Route path="/my-account" component={MyAccount} />*/}
+			      <ul>
+			      	{	
+			      		// console.log(this.state.markers)
+			      		Object.keys(this.state.markers)
+			      		.map(key => <li key={key}><h3>{key}</h3></li>)
+			      	}
+			      </ul>
 			    </div>
 		     </div>
     	</HashRouter>

@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import SampleMaps from '../sample-maps.js';
 
 class Explore extends Component {
-	constructor() {
-		super();
+	// constructor() {
+	// 	super();
 
-		this.loadMap = this.loadMap.bind(this);
+	// 	this.loadMap = this.loadMap.bind(this);
 
-		this.state = {
-			maps: {}
-		}
-	}
+	// 	this.state = {
+	// 		maps: {}
+	// 	}
+	// }
 
-	loadMap() {
-		this.setState({
-			maps: SampleMaps
-		})
-	}
+	// loadMap() {
+	// 	this.setState({
+	// 		maps: SampleMaps
+	// 	})
+	// }
 
 	render() {
 		return (
@@ -24,7 +24,7 @@ class Explore extends Component {
 		        <h2>Filters</h2>
 		        <section className="thumb-container">
 		        	{
-		        		Object.keys(this.state.maps).map(key => <);
+		        		// Object.keys(this.state.maps).map(key => <);
 		        	}
 
 		        	<figure className="thumb">
