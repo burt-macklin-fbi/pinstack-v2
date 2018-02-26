@@ -1,3 +1,15 @@
+img {
+  width: 100%;
+}
+img.marker-icon {
+  width: auto;
+}
+ul {
+  padding: 0;
+}
+main {
+  padding: 0 5%;
+}
 @font-face {
   font-family: 'BioRhyme';
   font-style: normal;
@@ -25,6 +37,11 @@
   font-weight: 400;
   src: url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.eot"); /* IE9 Compat Modes */
   src: local('Cutive'), local('Cutive-Regular'), url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.eot?#iefix") format('embedded-opentype'), url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.woff2") format('woff2'), url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.woff") format('woff'), url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.ttf") format('truetype'), url("./fonts/cutive-v9-latin/cutive-v9-latin-regular.svg#Cutive") format('svg'); /* Legacy iOS */
+}
+.maps__map {
+  display: inline-block;
+  width: 33.33%;
+  padding: 0 10px;
 }
 article,
 aside,

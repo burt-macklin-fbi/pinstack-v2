@@ -52,6 +52,18 @@ class App extends Component {
   }
 
   render() {
+  	// console.log(this.state.markers);
+  	const contents = Object
+  					.keys(this.state.markers)
+			      	.map(key => 
+
+			      		<figure className="thumb" key={key}>
+			      			<img src={this.state.markers[key].image} alt={this.state.markers[key].title} />
+			      			<figcaption>{this.state.markers[key].description}</figcaption>
+	        				<span>{this.state.markers[key].keywords}</span>
+			      		</figure>
+			      	)
+	console.log(contents);
     return (
  		<HashRouter>
 		    <div className="App">
@@ -68,23 +80,23 @@ class App extends Component {
 			        <input type="search" className="search-input"/>
 			      </div>
 		        </header>
-		        <div className="wrapper">
+		        <main className="wrapper">
 		        	<Route path="/explore" component={Explore} />
 		        	<Route path="/create-map" component={CreateMap} />
 		        	<Route path="/my-account" component={MyAccount} />
 			      	<Container />
-			      {/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack 
-			      <Route path="/explore" component={Explore} />
-			      <Route path="/create-map" component={CreateMap} />
-			      <Route path="/my-account" component={MyAccount} />*/}
-			      <ul>
-			      	{	
-			      		// console.log(this.state.markers)
-			      		Object.keys(this.state.markers)
-			      		.map(key => <li key={key}><h3>{key}</h3></li>)
-			      	}
+			      {/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack*/} 
+
+			      <ul className="maps">
+		        	<h2>Filters</h2>
+		        	{contents}
+			      	{/*	
+			      		Object
+			      		.keys(this.state.markers)
+			      		.map(key => <Explore key={key} info={this.state.markers[key]} />)
+			      	*/}
 			      </ul>
-			    </div>
+			    </main>
 		     </div>
     	</HashRouter>
     );
