@@ -3,15 +3,18 @@ import React, { Component } from 'react';
 class Explore extends Component {
 
 	render() {
-		// const info = this.props.info;
-		// console.log(info);
+		//props don't load on initial render,
+		//render JSX when they do
+		if(this.props.details == null) return null;
 
+		const { details } = this.props;
+		
 		return (
 	        <section className="maps__map">
 	        	<figure className="thumb">
-	        		{/*<img src={info.image} alt={info.title} />
-	        		<figcaption>{info.description}</figcaption>
-	        		<span>{info.keywords}</span>*/}
+	        		<img src={details.image} alt={details.title} />
+	        		<figcaption>{details.description}</figcaption>
+	        		<span>{details.keywords}</span>
 	        	</figure>
 	        </section>
 		);

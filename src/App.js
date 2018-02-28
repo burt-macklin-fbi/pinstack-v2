@@ -52,18 +52,7 @@ class App extends Component {
   }
 
   render() {
-  	// console.log(this.state.markers);
-  	const contents = Object
-  					.keys(this.state.markers)
-			      	.map(key => 
 
-			      		<figure className="thumb" key={key}>
-			      			<img src={this.state.markers[key].image} alt={this.state.markers[key].title} />
-			      			<figcaption>{this.state.markers[key].description}</figcaption>
-	        				<span>{this.state.markers[key].keywords}</span>
-			      		</figure>
-			      	)
-	console.log(contents);
     return (
  		<HashRouter>
 		    <div className="App">
@@ -89,12 +78,11 @@ class App extends Component {
 
 			      <ul className="maps">
 		        	<h2>Filters</h2>
-		        	{contents}
-			      	{/*	
+			      	{
 			      		Object
 			      		.keys(this.state.markers)
-			      		.map(key => <Explore key={key} info={this.state.markers[key]} />)
-			      	*/}
+			      		.map(key => <Explore key={key} details={this.state.markers[key]} />)
+			      	}
 			      </ul>
 			    </main>
 		     </div>
