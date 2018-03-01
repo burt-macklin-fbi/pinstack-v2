@@ -4,10 +4,9 @@ import React, { Component } from 'react';
 import { HashRouter, NavLink, Route } from 'react-router-dom';
 
 //VIEWS 
-import Container from './Components/Container';
-import Explore from './Components/Explore';
-import CreateMap from './Components/CreateMap';
-import MyAccount from './Components/MyAccount';
+import Explore from './Components/Views/Explore';
+// import CreateMap from './Components/Views/CreateMap';
+// import MyAccount from './Components/Views/MyAccount';
 
 import SampleMaps from './sample-maps';
 
@@ -70,20 +69,23 @@ class App extends Component {
 			      </div>
 		        </header>
 		        <main className="wrapper">
-		        	<Route path="/explore" component={Explore} />
-		        	<Route path="/create-map" component={CreateMap} />
-		        	<Route path="/my-account" component={MyAccount} />
-			      	<Container />
-			      {/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack*/} 
+		        	{/*<Route path="/" component={App}>
+		        		<IndexRoute component={Explore} />
+			        	<Route path="create-map" component={CreateMap} />
+			        	<Route path="my-account" component={MyAccount} />
+			        	<Route path="*" component={Explore} />
+		        	</Route>*/}
+			      	{/*<Container />*/}
+			      	{/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack*/} 
+			    	<ul className="maps">
+			        	<h2>Filters</h2>
+				      	{
+				      		Object
+				      		.keys(this.state.markers)
+				      		.map(key => <Explore key={key} details={this.state.markers[key]} />)
+				      	}
+			      	</ul>
 
-			      <ul className="maps">
-		        	<h2>Filters</h2>
-			      	{
-			      		Object
-			      		.keys(this.state.markers)
-			      		.map(key => <Explore key={key} details={this.state.markers[key]} />)
-			      	}
-			      </ul>
 			    </main>
 		     </div>
     	</HashRouter>
