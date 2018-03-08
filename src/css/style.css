@@ -10,6 +10,9 @@ ul {
 main {
   padding: 0 5%;
 }
+.current {
+  border-bottom: 4px solid #000;
+}
 @font-face {
   font-family: 'BioRhyme';
   font-style: normal;
