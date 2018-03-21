@@ -1,12 +1,13 @@
 //PLUGINS
 import React, { Component } from 'react';
 // import { BrowserRouter as Router } from 'react-router-dom'; ///previous setup ???
-import { HashRouter, NavLink, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //VIEWS 
-import Explore from './Components/Views/Explore';
-// import CreateMap from './Components/Views/CreateMap';
-// import MyAccount from './Components/Views/MyAccount';
+// import Explore from './Views/Explore';
+// import CreateMap from './Views/CreateMap';
+// import MyAccount from './Views/MyAccount';
+import Home from './Views/Home';
 
 import SampleMaps from './sample-maps';
 
@@ -15,9 +16,6 @@ import './css/style.css';
 
 //DATEBASE 
 import base from './base';
-
-//ASSETS
-import markerIcon from './assets/marker.svg'
 
 class App extends Component {
   constructor() {
@@ -53,42 +51,9 @@ class App extends Component {
   render() {
 
     return (
- 		<HashRouter>
-		    <div className="App">
-			    <header className="header">
-		          <ul className="navgroup">
-		            <li className="navgroup__item"><NavLink to="/explore">Explore</NavLink></li>
-		            <li className="navgroup__item">Share</li>
-		            <li className="navgroup__item logo"><NavLink to="/">P<img className="marker-icon" src={markerIcon}/>nStack</NavLink></li>
-		            <li className="navgroup__item"><NavLink to="/create-map">Create Map</NavLink></li>
-		            <li className="navgroup__item"><NavLink to="/my-account">Sign In</NavLink></li>
-		          </ul>
-		          <div className="search-box">
-
-			        <input type="search" className="search-input"/>
-			      </div>
-		        </header>
-		        <main className="wrapper">
-		        	{/*<Route path="/" component={App}>
-		        		<IndexRoute component={Explore} />
-			        	<Route path="create-map" component={CreateMap} />
-			        	<Route path="my-account" component={MyAccount} />
-			        	<Route path="*" component={Explore} />
-		        	</Route>*/}
-			      	{/*<Container />*/}
-			      	{/*<Route path="/" component={App} /> <- This Route breaks it for some reason, causes an overload to the callstack*/} 
-			    	<ul className="maps">
-			        	<h2>Filters</h2>
-				      	{
-				      		Object
-				      		.keys(this.state.markers)
-				      		.map(key => <Explore key={key} details={this.state.markers[key]} />)
-				      	}
-			      	</ul>
-
-			    </main>
-		     </div>
-    	</HashRouter>
+ 		<Router>
+	        <Route exact path="/" component={Home}/>
+    	</Router>
     );
   }
 }
