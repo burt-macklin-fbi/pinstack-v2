@@ -20,15 +20,6 @@ import './css/style.css';
 //DATEBASE 
 import base from './base';
 
-const Main = () => (
-	<Switch>
-	  <Route exact path='/explore' component={Explore}></Route>
-	  <Route exact path='/' component={Home}></Route>
-	  <Route exact path='/create-map' component={CreateMap}></Route>
-	  <Route exact path='/my-account' component={MyAccount}></Route>
-	</Switch>
-);
-
 class App extends Component {
   constructor() {
   	super();
@@ -61,24 +52,19 @@ class App extends Component {
   }
 
   render() {
-
+	
     return (
 		<div className="App">
 			<Header />
-			<Main />
-			{/* <main className="wrapper"> */}
-				{/*<Container />*/}
-				{/*<ul className="maps">
-					<h2>Filters</h2>
-					{
-						Object
-						.keys(this.state.markers)
-						.map(key => <Explore key={key} details={this.state.markers[key]} />)
-					}
-				</ul>*/}
-
-			{/* </main> */}
-			</div>
+			<main className="wrapper">
+				<Switch>
+					<Route exact path='/explore' component={() => <Explore mapsList={this.state.markers}/>}></Route>
+					<Route exact path='/' component={Home}></Route>
+					<Route exact path='/create-map' component={CreateMap}></Route>
+					<Route exact path='/my-account' component={MyAccount}></Route>
+				</Switch>
+			</main>
+		</div>
     );
   }
 }

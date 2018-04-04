@@ -11,7 +11,7 @@ main {
   padding: 0 5%;
 }
 .current {
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid #eb5858;
 }
 @font-face {
   font-family: 'BioRhyme';
@@ -216,6 +216,10 @@ a {
 }
 .navgroup__item a {
   text-decoration: none;
+  color: #434343;
+}
+.navgroup__item a:hover {
+  color: rgba(67,67,67,0.5);
 }
 /* HEADER, NAV */
 .header {
