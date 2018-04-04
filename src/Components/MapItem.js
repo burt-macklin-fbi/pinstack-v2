@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class MapItem extends Component {
 
@@ -11,11 +12,11 @@ class MapItem extends Component {
 
 		return (
 	        <section className="maps__map">
-	        	<figure className="thumb">
-	        		<img src={map.image} alt={map.title} />
-	        		<figcaption>{map.description}</figcaption>
-	        		<span>{map.keywords}</span>
-	        	</figure>
+				<figure className="thumb">
+					<img src={map.image} alt={map.title} />
+					<figcaption>{map.description}</figcaption>
+					<span>{map.keywords}</span>
+				</figure>
 	        </section>
 		);
 	}
