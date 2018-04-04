@@ -7,6 +7,7 @@ import { NavLink, Switch, Route } from 'react-router-dom';
 // import Explore from './Views/Explore';
 import CreateMap from './Views/CreateMap';
 import MyAccount from './Views/MyAccount';
+import Home from './Views/Home';
 
 import SampleMaps from './sample-maps';
 
@@ -114,6 +115,9 @@ class App extends Component {
 				</ul>*/}
 
 			{/* </main> */}
+			<Router>
+	        <Route exact path="/" component={Home}/>
+    	</Router>
 			</div>
     );
   }
