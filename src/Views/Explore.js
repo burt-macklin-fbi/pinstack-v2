@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import MapItem from '../Components/MapItem';
-import SeeMap from '../Components/SeeMap';
 
 class Explore extends Component {
 
