@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 
 import MapItem from '../Components/MapItem';
+import SeeMap from '../Components/SeeMap';
 
 class Explore extends Component {
+	constructor() {
+		super();
+		this.state = {
+			isHidden: true
+		}
+
+		this.clickHandler = this.clickHandler.bind(this);
+	}
+
+	clickHandler() {
+		console.log("I was clicked, YAY!");
+		this.setState({
+			isHidden: false
+		})
+	}
 
 	render() {
 		//props don't load on initial render,
@@ -12,14 +28,19 @@ class Explore extends Component {
 		const { mapsList } = this.props;
 
 		return (
-			<ul className="maps">
-				<h2>Filters</h2>
-				{
-					Object
-					.keys(mapsList)
-					.map(key => <MapItem key={key} map={mapsList[key]} />)
-				}
-			</ul>
+			<div>
+				
+				{!this.state.isHidden ? (<SeeMap />) : (
+					<ul className="maps">
+					<h2>Filters</h2>
+					{
+						Object
+						.keys(mapsList)
+						.map(key => <MapItem key={key} map={mapsList[key]} openMap={this.clickHandler}/>)
+					}
+				</ul>
+				)}
+			</div>
 		);
 	}
 }

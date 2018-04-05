@@ -10,7 +10,7 @@ class MapItem extends Component {
 		const { map } = this.props;
 
 		return (
-	        <section className="maps__map">
+	        <section className="maps__map" onClick={this.props.openMap}>
 				<figure className="thumb">
 					<img src={map.image} alt={map.title} />
 					<figcaption>{map.description}</figcaption>
